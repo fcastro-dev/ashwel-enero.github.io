@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reset Ashwel - Enero en Equilibrio</title>
-  <script src="/_sdk/element_sdk.js"></script>
-  <script src="/_sdk/data_sdk.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  
   <link
     href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&amp;family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
     rel="stylesheet">
@@ -763,17 +764,20 @@
             style="font-size: 1.125rem; color: var(--color-text); opacity: 0.95;">Completa el formulario y nos pondremos
             en contacto contigo</p>
           <form id="contact-form" style="background-color: #ffffff; padding: 2rem; border-radius: 16px;">
-            <div class="form-group"><label for="nombre" class="font-montserrat">Nombre y Apellido *</label> <input
-                type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+            <div class="form-group"><label for="nombre" class="font-montserrat">Nombre y Apellido *</label> 
+              <input
+                type="text" id="nombre" name="Name" required placeholder="Tu nombre completo">
             </div>
-            <div class="form-group"><label for="email" class="font-montserrat">Email *</label> <input type="email"
-                id="email" name="email" required placeholder="tu@email.com">
+            <div class="form-group"><label for="email" class="font-montserrat">Email *</label> 
+              <input type="email"
+                id="email" name="Email" required placeholder="tu@email.com">
             </div>
-            <div class="form-group"><label for="telefono" class="font-montserrat">Teléfono (opcional)</label> <input
-                type="tel" id="telefono" name="telefono" placeholder="+58 424 123 4567">
+            <div class="form-group"><label for="telefono" class="font-montserrat">Teléfono (opcional)</label> 
+              <input
+                type="tel" id="telefono" name="Phone" placeholder="+58 424 123 4567">
             </div>
             <div class="form-group"><label for="producto" class="font-montserrat">¿Qué producto te interesa? *</label>
-              <select id="producto" name="producto" required>
+              <select id="producto" name="Product" required>
                 <option value="">Selecciona una opción</option>
                 <option value="Plan de Cocina Consciente – 7 días">Plan de Cocina Consciente – 7 días</option>
                 <option value="Kit Reset Ashwel">Kit Reset Ashwel</option>
@@ -783,7 +787,7 @@
               </select>
             </div>
             <div class="form-group"><label for="dolor" class="font-montserrat">¿Cuál es tu principal motivación?
-                *</label> <select id="dolor" name="dolor" required>
+                *</label> <select id="dolor" name="Motivation" required>
                 <option value="">Selecciona una opción</option>
                 <option value="Deseo bajar de peso">Deseo bajar de peso</option>
                 <option value="Deseo recuperarme de los abusos del mes de diciembre">Deseo recuperarme de los abusos del
@@ -840,14 +844,14 @@
     };
 
     // Inicializar Data SDK
-    async function initDataSdk() {
+    /* async function initDataSdk() {
       if (window.dataSdk) {
         const initResult = await window.dataSdk.init(dataHandler);
         if (!initResult.isOk) {
           console.error("Error al inicializar Data SDK");
         }
       }
-    }
+    } */
 
     // Scroll al formulario con producto preseleccionado
     function scrollToForm(producto) {
@@ -877,16 +881,16 @@
 
       // Recopilar datos del formulario
       const formData = {
-        nombre_apellido: document.getElementById('nombre').value,
-        email: document.getElementById('email').value,
-        telefono: document.getElementById('telefono').value || 'No proporcionado',
-        producto: document.getElementById('producto').value,
-        dolor: document.getElementById('dolor').value,
-        fecha: new Date().toISOString()
+        Name: document.getElementById('nombre').value,
+        Email: document.getElementById('email').value,
+        Phone: document.getElementById('telefono').value || 'No proporcionado',
+        Product: document.getElementById('producto').value,
+        Motivation: document.getElementById('dolor').value,
+        Date: new Date().toISOString()
       };
 
       // Guardar en Data SDK
-      if (window.dataSdk) {
+      /* if (window.dataSdk) {
         const result = await window.dataSdk.create(formData);
 
         if (result.isOk) {
@@ -897,7 +901,38 @@
         }
       } else {
         messageDiv.innerHTML = '<div class="error-message font-montserrat">❌ Error de sistema. Por favor, intenta más tarde.</div>';
-      }
+      } */
+
+      // Pega la URL de tu script de Google Apps Script aquí
+      const url = 'https://script.google.com/macros/s/AKfycbzQQB-1Ak7nk6blqX-1-TI8WKTw4VX6uQsaVBaxNedLiaQcJHN3Bm1_Mkl8uO0ApxPG/exec';
+
+      /* fetch(url, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        messageDiv.innerHTML = '<div class="success-message font-montserrat">✅ ¡Gracias! Tu solicitud ha sido enviada correctamente. Nos pondremos en contacto contigo pronto.</div>';
+        document.getElementById('contact-form').reset();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        messageDiv.innerHTML = '<div class="error-message font-montserrat">❌ Hubo un error al enviar tu solicitud. Por favor, intenta nuevamente.</div>';
+      }); */
+
+      $.ajax({
+        url: url,
+        method: 'POST',
+        data: formData,
+        success: function(response) {
+          messageDiv.innerHTML = '<div class="success-message font-montserrat">✅ ¡Gracias! Tu solicitud ha sido enviada correctamente. Nos pondremos en contacto contigo pronto.</div>';
+          document.getElementById('contact-form').reset();
+        },
+        error: function(error) {
+          console.error('Error:', error);
+          messageDiv.innerHTML = '<div class="error-message font-montserrat">❌ Hubo un error al enviar tu solicitud. Por favor, intenta nuevamente.</div>';
+        }
+      });
 
       // Rehabilitar botón
       submitBtn.disabled = false;
@@ -945,7 +980,7 @@
       }
     }
 
-    function mapToCapabilities(config) {
+    /* function mapToCapabilities(config) {
       return {
         recolorables: [
           {
@@ -1000,7 +1035,7 @@
           }
         }
       };
-    }
+    } */
 
     function mapToEditPanelValues(config) {
       return new Map([
@@ -1013,22 +1048,30 @@
       ]);
     }
 
-    // Inicializar SDKs
-    initDataSdk();
+    // Aplicar configuración por defecto si no hay Element SDK
+    onConfigChange(defaultConfig);
+    mapToEditPanelValues(defaultConfig);
 
-    if (window.elementSdk) {
+    // Inicializar SDKs
+    //initDataSdk();
+
+    /* if (window.elementSdk) {
       window.elementSdk.init({
         defaultConfig,
         onConfigChange,
         mapToCapabilities,
         mapToEditPanelValues
       });
-    }
+    } else {
+      // Aplicar configuración por defecto si no hay Element SDK
+      onConfigChange(defaultConfig);
+      mapToEditPanelValues(defaultConfig);
+    } */
 
     // Hacer scrollToForm global
     window.scrollToForm = scrollToForm;
   </script>
-  <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9b547ebe965bf471',t:'MTc2Njk2MDk1Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+  <script>/*(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9b547ebe965bf471',t:'MTc2Njk2MDk1Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();*/</script>
 </body>
 
 </html>
