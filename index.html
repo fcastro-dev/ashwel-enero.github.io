@@ -1,0 +1,1034 @@
+<!doctype html>
+<html lang="es" class="h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset Ashwel - Enero en Equilibrio</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&amp;family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #374c3a;
+      --color-secondary: #a0c9a3;
+      --color-text: #374c3a;
+      --color-surface: #ffffff;
+      --color-background: #edf2ee;
+      --color-action: #374c3a;
+    }
+
+    body {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .font-raleway {
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .font-montserrat {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .card-product {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      /*border: 2px solid transparent;*/
+    }
+
+    .card-product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.02);
+      opacity: 0.9;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e5e5e5;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--color-primary);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--color-text);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .spinner {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid var(--color-primary);
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      animation: spin 1s linear infinite;
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .success-message {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .error-message {
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    /* Logo SVG wrapper: fixed base width but responsive to container */
+    .logo-wrapper {
+      width: 280px;
+      max-width: 100%;
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+    }
+
+    .logo-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .solutions-wrapper {
+      margin-left: -2rem;
+      margin-right: -2rem;
+      display: block;
+      text-align: center;
+    }
+
+    .solutions-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+
+    @media (min-width: 768px) {
+        .md\:todo {
+            grid-column: 1 /span 2;
+        }
+    }
+
+    .problems-wrapper {
+      display: block;
+      text-align: center;
+    }
+
+    .problems-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .card-title {
+      backdrop-filter: saturate(50%) blur(2px);
+      background-color: rgba(250, 250, 252, .7);
+      margin-top: -3.5rem;
+      border-radius: 16px;
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+    }
+
+    .family-wrapper {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      
+    }
+
+    .family-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      max-width: 25rem;
+    }
+
+    .testimonial-wrapper {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: -5rem;
+    }
+
+    .testimonial-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      max-width: 25rem;
+    }
+
+    .close-wrapper {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      
+    }
+
+    .close-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      max-width: 40rem;
+    }
+    
+  </style>
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+</head>
+
+<body class="h-full">
+  <div id="app" class="w-full h-full overflow-auto" style="background-color: var(--color-background);">
+
+    <!-- SECCIÓN 1 - HERO -->
+    <section class="w-full py-16 px-6" style="background-color: var(--color-secondary);">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="mb-8 logo-wrapper">
+
+          <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1460 416.19">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #374c3a;
+                }
+              </style>
+            </defs>
+            <g id="Capa_2" data-name="Capa 2">
+              <g id="Capa_1-2" data-name="Capa 1">
+                <path class="cls-1"
+                  d="M243.61,259.56l25.48-14.08a3.43,3.43,0,0,1,4.63,1.27c10.44,18.1,26.48,24.84,47.76,24.84,23.22,0,41-9.54,41-27.38,0-42.71-116.53-10.37-116.53-87.92,0-35.66,31.52-61.79,75.89-61.79,36.05,0,61.12,15.89,74.5,37.91a3.48,3.48,0,0,1-1.22,4.86l-25.42,14.39a3.45,3.45,0,0,1-4.67-1.27c-9.05-15.54-24.78-21-42.36-21-19.08,0-35.67,9.95-35.67,26.12,0,41.48,116.54,11.2,116.54,87.93,0,38.56-37.32,63-80.45,63-36.47,0-64.8-13.94-80.89-42.18A3.43,3.43,0,0,1,243.61,259.56Z" />
+                <path class="cls-1"
+                  d="M435.14,298.41V8.79a3.45,3.45,0,0,1,3.45-3.46h34.15a3.45,3.45,0,0,1,3.45,3.46V113.31a3.44,3.44,0,0,0,5.7,2.6c15.66-13.76,37.64-22.24,61.9-22.24,59.72,0,93.32,39.81,93.32,102V298.41a3.46,3.46,0,0,1-3.46,3.45H599.5a3.45,3.45,0,0,1-3.45-3.45V199.84c0-36.08-19.91-67.19-58.48-67.19-36.08,0-61.38,29-61.38,68.43v97.33a3.45,3.45,0,0,1-3.45,3.45H438.59A3.45,3.45,0,0,1,435.14,298.41Z" />
+                <path class="cls-1"
+                  d="M1032.94,199c0-58.48,41.89-106.17,102.85-106.17,61.38,0,99.54,44.38,99.54,101.19v13.14a3.45,3.45,0,0,1-3.46,3.45H1076.81a3.48,3.48,0,0,0-3.4,4.12c6,32.63,31.91,55.19,66.95,55.19,23.84,0,45.4-9.91,57.74-30.44a3.44,3.44,0,0,1,4.51-1.23l25.44,13.06a3.44,3.44,0,0,1,1.47,4.71c-18.16,32.84-50.14,50.39-88.75,50.39C1079,306.42,1032.94,261.63,1032.94,199Zm157.58-14.93a3.48,3.48,0,0,0,3.44-3.86c-3.27-30.23-26.34-50.47-58.58-50.47-32.84,0-54.72,21.88-60.28,50.18a3.48,3.48,0,0,0,3.4,4.15Z" />
+                <path class="cls-1"
+                  d="M754.14,303c-19.11,0-35.56-5.88-48.9-17.47-63-54.67-30.81-223.28-22-263.67a3.44,3.44,0,0,1,4.16-2.62l32.35,7.56a3.43,3.43,0,0,1,2.58,4.09c-16,73-27,192.93,9.24,224.35,2.66,2.31,8.9,7.74,22.48,7.74,8.86,0,19.4-2.35,31.35-7l1-.35c4.93-1.66,9.8-3.49,14.38-5.41h0a3.45,3.45,0,0,0,1.22-5.51h0c-17.31-19-30.34-40.47-37.68-62-15-44.08-4.38-84.19,29.19-110.06,16.41-12.65,34.15-19.33,51.3-19.33a65,65,0,0,1,31.55,8.15c30,16.47,47.72,55.86,44,98-2.91,32.79-17.74,63.18-42.88,87.86h0a3.46,3.46,0,0,0,1,5.63h0c9.39,4.12,18.24,6.2,26.3,6.2,16.56,0,28.87-4.63,37.65-14.14,15.94-17.29,17.34-48.52,16.57-58.09l-.07-1.75V27.91a3.46,3.46,0,0,1,3.45-3.45h33.23A3.45,3.45,0,0,1,999,27.91V184.37a1.21,1.21,0,0,0,0,.19c.6,9.51,1.94,56.13-27.15,87.66-16.33,17.7-39.55,27-67.14,27-20,0-42.32-7.57-64.47-21.89l-1.73-1.12-1.81,1a229.53,229.53,0,0,1-37.17,16.26C783.22,299.8,768,303,754.14,303ZM844.49,93.39c-8.14,0-17.07,3.7-26.54,11-20,15.37-25.23,37.35-15.69,65.33,6.42,18.86,19.21,38.37,36,54.95h0a3.46,3.46,0,0,0,4.68.16h0c29.43-25.29,36-54.05,37.37-68.94,2.58-29.12-9.77-51.86-23.3-59.28A25.86,25.86,0,0,0,844.49,93.39Z" />
+                <path class="cls-1"
+                  d="M1427.06,236.26a3.43,3.43,0,0,0-4.19,1.15,43.7,43.7,0,0,1-36.76,19.18c-12.79,0-22-8.56-27.55-15.73l-1.27-1.65.86-1.89c28.44-62.49,30.06-155.36,3.52-202.79C1349.15,12.26,1330.51,0,1309.18,0c-20.51,0-37.24,12-45.89,32.84-19.56,47.22,1.09,146,41.68,202.75a3.44,3.44,0,0,1,.06,3.95c-43.58,64.23-109.51,113.9-183.54,136.75a3.45,3.45,0,0,0-2.3,4.27L1129,413.7a3.47,3.47,0,0,0,4.33,2.33c79.44-24.43,150.61-76.4,199.47-143.88l1.53,2a3.16,3.16,0,0,0,.39.43l2.27,2.09c9.93,9.17,26.51,20.1,49.08,20.1,38.88,0,63-24.08,73.43-42.12a3.44,3.44,0,0,0-1.62-4.87ZM1300.38,48.18c2.41-5.85,4.79-8,8.8-8,2.38,0,9.63,0,17.46,14,16.08,28.7,18.41,89.23,5.3,137.8h0a3.46,3.46,0,0,1-6.4.69h0C1300.76,145.08,1288.77,76.21,1300.38,48.18Z" />
+                <path class="cls-1"
+                  d="M177.5,98v12.31a3.44,3.44,0,0,1-5.43,2.81c-17.7-12.3-39.63-19.4-63.83-19.4C46.45,93.67,0,141.78,0,199.84c0,58.89,43.13,107,102,107,29.1,0,53.41-12.11,69.3-31.88a3.45,3.45,0,0,1,6.18,2.11v21.35a3.46,3.46,0,0,0,3.46,3.45H213a3.46,3.46,0,0,0,3.46-3.45V98A3.45,3.45,0,0,0,213,94.5H181A3.45,3.45,0,0,0,177.5,98Zm-69.26,169.9c-37.74,0-67.18-30.68-67.18-67.6,0-37.32,29.44-68,67.18-68,38.16,0,67.19,30.69,67.19,68C175.43,237.17,146.4,267.85,108.24,267.85Z" />
+              </g>
+            </g>
+          </svg>
+
+        </div>
+        <h1 id="hero-title-1" class="font-raleway"
+          style="font-size: 3rem; font-weight: 300; color: var(--color-text); line-height: 1.2; margin-bottom: 0.5rem;">
+          Enero no es para castigarte.</h1>
+        <h1 id="hero-title-2" class="font-raleway"
+          style="font-size: 3rem; font-weight: 600; color: var(--color-primary); line-height: 1.2; margin-bottom: 2rem;">
+          Es para volver al equilibrio, desde la cocina.</h1>
+        <p id="hero-subtitle" class="font-montserrat max-w-3xl mx-auto"
+          style="font-size: 1.25rem; color: #6b6b6b; margin-bottom: 2.5rem; font-weight: 400;">Programas conscientes
+          para resetear tu cuerpo y simplificar tu alimentación, creados para familias reales.</p>
+        <button
+          onclick="scrollToForm('Los quiero todos')" class="btn-primary font-montserrat"
+          style="background-color: var(--color-action); color: #ffffff; padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.125rem; font-weight: 600; border: none; cursor: pointer; margin-bottom: 2rem;">
+          👉 Quiero mi reset de enero </button>
+        <div class="mt-8 max-w-2xl mx-auto">
+          <div
+            style="background-color: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <div class="check-item font-montserrat" style="color: var(--color-text); font-size: 0.95rem;"><span
+                style="color: var(--color-primary); font-weight: 600;">✔</span> <span><strong>Pagos disponibles en
+                  Venezuela:</strong> Zelle, Pago Móvil, Transferencia</span>
+            </div>
+            <div class="check-item font-montserrat" style="color: var(--color-primary); font-size: 0.95rem;"><span
+                style="font-weight: 600;">⚠</span> <span><strong>Cupos y unidades limitadas.</strong> No esperes hasta
+                último momento.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2 - EL PROBLEMA -->
+    <section class="w-full py-16 px-6" style="background-color: #ffffff;">
+      <div class="max-w-5xl mx-auto">
+        <p id="problema-intro" class="font-raleway text-center"
+          style="font-size: 1.75rem; color: var(--color-text); margin-bottom: 3rem; font-weight: 400;">Después de
+          diciembre vienen:</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+
+          <!-- Inflamación -->
+          <div style="background-color: var(--color-background); padding: 0; border-radius: 12px; text-align: center;">
+            <div class="problems-wrapper" style="font-size: 3rem; margin-bottom: 1rem;">
+              <img class="problems-svg" src="img/Inflamacion.png">
+            </div>
+            <h3 class="font-montserrat card-title"
+              style="font-size: 1.25rem; color: var(--color-text); font-weight: 600;">Inflamación</h3>
+          </div>
+
+          <!-- Cansancio -->
+          <div style="background-color: var(--color-background); padding: 0; border-radius: 12px; text-align: center;">
+            <div class="problems-wrapper" style="font-size: 3rem; margin-bottom: 1rem;">
+              <img class="problems-svg" src="img/Cansancio.png">
+            </div>
+            <h3 class="font-montserrat card-title"
+              style="font-size: 1.25rem; color: var(--color-text); font-weight: 600;">Cansancio</h3>
+          </div>
+
+          <!-- Desorden -->
+          <div style="background-color: var(--color-background); padding: 0; border-radius: 12px; text-align: center;">
+            <div class="problems-wrapper" style="font-size: 3rem; margin-bottom: 1rem;">
+              <img class="problems-svg" src="img/desorden.png">
+            </div>
+            <h3 class="font-montserrat card-title"
+              style="font-size: 1.15rem; color: var(--color-text); font-weight: 600; padding: 3px;">Desorden en la
+              cocina</h3>
+          </div>
+
+          <!-- Culpa -->
+          <div style="background-color: var(--color-background); padding: 0; border-radius: 12px; text-align: center;">
+            <div class="problems-wrapper" style="font-size: 3rem; margin-bottom: 1rem;">
+              <img class="problems-svg" src="img/Culpa.png">
+            </div>
+            <h3 class="font-montserrat card-title"
+              style="font-size: 1.15rem; color: var(--color-text); font-weight: 600; padding: 3px;">Culpa por lo comido
+            </h3>
+          </div>
+        </div>
+        <p class="font-montserrat text-center"
+          style="font-size: 1.125rem; color: var(--color-text); margin-bottom: 3rem;">Y casi siempre, malas decisiones:
+          dietas extremas o nada de acción.</p>
+        <div id="puente-solucion"
+          style="background-color: var(--color-secondary); padding: 2.5rem; border-radius: 16px; text-align: center;">
+          <p class="font-raleway" style="font-size: 1.75rem; color: var(--color-text); font-weight: 500;">En Ashwel
+            creemos en otra forma:<br><span style="font-weight: 300;">volver al equilibrio, con comida real y procesos
+              simples.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3 - LAS SOLUCIONES -->
+    <section class="w-full py-16 px-6" style="background-color: var(--color-background);">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="font-raleway text-center mb-12"
+          style="font-size: 2.5rem; color: var(--color-primary); font-weight: 600;">Tus soluciones para enero</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          <!-- Producto 1 -->
+          <div class="card-product"
+            style="background-color: var(--color-surface); padding: 0 2rem 2rem 2rem; border-radius: 16px;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">
+              <div class="mb-8 solutions-wrapper">
+                <img class="solutions-svg" src="img/7dias.png">
+              </div>
+            </div>
+            <h3 class="font-raleway"
+              style="font-size: 1.75rem; color: var(--color-text); font-weight: 600; margin-bottom: 0.5rem;">
+              Plan de Cocina Consciente – 7 días
+            </h3>
+            <p class="font-montserrat"
+              style="font-size: 2rem; color: var(--color-primary); font-weight: 700; margin-bottom: 1.5rem;">$15
+            </p>
+            <div style="margin-bottom: 1.5rem;">
+              <div class="check-item font-montserrat" style="color: var(--color-text);"><span
+                  style="color: var(--color-primary);">✔</span> <span>Simplifica tu cocina</span>
+              </div>
+              <div class="check-item font-montserrat" style="color: var(--color-text);"><span
+                  style="color: var(--color-primary);">✔</span> <span>Te nutres sin complicarte</span>
+              </div>
+              <div class="check-item font-montserrat" style="color: var(--color-text);"><span
+                  style="color: var(--color-primary);">✔</span> <span>Recuperas el disfrute de cocinar</span>
+              </div>
+            </div>
+            <div
+              style="background-color: var(--color-secondary); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+              <p class="font-montserrat"
+                style="font-size: 0.9rem; color: var(--color-text); font-weight: 600; margin-bottom: 0.5rem;">Incluye:
+              </p>
+              <p class="font-montserrat" style="font-size: 0.85rem; color: var(--color-text);">– Acompañamiento diario
+                por WhatsApp<br>
+                – Guía paso a paso por 7 días</p>
+            </div>
+            <p class="font-montserrat"
+              style="font-size: 0.9rem; color: var(--color-primary); font-weight: 600; margin-bottom: 1.5rem;">📆 Fecha:
+              Del 12 al 18 de Enero</p>
+            <p class="font-montserrat"
+              style="font-size: 0.9rem; color: var(--color-primary); font-weight: 600; margin-bottom: 1.5rem;">🎁 Bono:
+              15% OFF en productos Ashwel</p>
+            
+            <button onclick="scrollToForm('Plan de Cocina Consciente – 7 días')"
+              class="btn-primary font-montserrat"
+              style="background-color: var(--color-action); color: #ffffff; padding: 0.875rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 600; border: none; cursor: pointer; width: 100%;">
+              👉 Empezar mi cocina consciente </button>
+          </div>
+
+          <!-- Producto 2 -->
+          <div class="card-product"
+            style="background-color: var(--color-surface); padding: 0 2rem 2rem 2rem; border-radius: 16px;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">
+              <div class="mb-8 solutions-wrapper">
+                <img class="solutions-svg" src="img/KitReset.png">
+              </div>
+            </div>
+            <h3 class="font-raleway"
+              style="font-size: 1.75rem; color: var(--color-text); font-weight: 600; margin-bottom: 0.5rem;">Kit Reset
+              Ashwel</h3>
+            <p class="font-montserrat"
+              style="font-size: 2rem; color: var(--color-primary); font-weight: 700; margin-bottom: 0.25rem;">$25</p>
+            <p class="font-montserrat"
+              style="font-size: 0.9rem; color: #d9534f; font-weight: 600; margin-bottom: 1.5rem;">⚠ Solo <span
+                id="units-available">12</span> unidades disponibles</p>
+            <div
+              style="background-color: var(--color-secondary); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+              <p class="font-montserrat"
+                style="font-size: 0.9rem; color: var(--color-text); font-weight: 600; margin-bottom: 0.5rem;">Incluye:
+              </p>
+              <p class="font-montserrat" style="font-size: 0.85rem; color: var(--color-text);">– Mezcla de aceites
+                (coco y orégano)<br>
+                – Caldo de huesos<br>
+                – Chucrut<br>
+                – Vinagre de manzana<br>
+                – Guía práctica para poner en la nevera</p>
+            </div>
+            <div
+              style="background-color: var(--color-background); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+              <p class="font-montserrat" style="font-size: 0.85rem; color: var(--color-text);">
+                <strong>Opcional:</strong> ➕ Ghee con 15% OFF</p>
+            </div>
+            <p class="font-montserrat"
+              style="font-size: 0.9rem; color: var(--color-primary); font-weight: 600; margin-bottom: 1.5rem;">📆 Fecha:
+              A partir del 12 Enero, puedes reservar tu kit desde ya</p>
+            <p class="font-montserrat"
+              style="font-size: 0.9rem; color: var(--color-primary); font-weight: 600; margin-bottom: 1.5rem;">🎁 Bono:
+              Acceso a la clase grabada Reset, Reinicia tu salud completamente <strong style="color: #5cb85c;">Gratis</strong></p>
+            <p class="font-montserrat"
+              style="font-size: 0.9rem; color: var(--color-primary); font-weight: 600; margin-bottom: 1.5rem;">🎁 Bono:
+              Grupo privado de WhatsApp solo en enero para dudas</p>
+            <button onclick="scrollToForm('Kit Reset Ashwel')"
+              class="btn-primary font-montserrat"
+              style="background-color: var(--color-action); color: #ffffff; padding: 0.875rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 600; border: none; cursor: pointer; width: 100%;">
+              👉 Quiero mi kit reset </button>
+          </div>
+
+          <!-- Producto 3 -->
+          <div class="card-product"
+            style="background-color: var(--color-surface); padding: 0 2rem 2rem 2rem; border-radius: 16px;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">
+              <div class="mb-8 solutions-wrapper">
+                <img class="solutions-svg" src="img/ClaseReset.png">
+              </div>
+            </div>
+            <h3 class="font-raleway"
+              style="font-size: 1.75rem; color: var(--color-text); font-weight: 600; margin-bottom: 0.5rem;">Clase Reset
+              (grabada)</h3>
+            <p class="font-montserrat"
+              style="font-size: 2rem; color: var(--color-primary); font-weight: 700; margin-bottom: 0.25rem;">$7</p>
+            <p class="font-montserrat"
+              style="font-size: 0.9rem; color: #5cb85c; font-weight: 600; margin-bottom: 1.5rem;">Gratis con el Kit Reset Ashwel</p>
+            <div style="margin-bottom: 1.5rem;">
+              <div class="check-item font-montserrat" style="color: var(--color-text);"><span
+                  style="color: var(--color-primary);">✔</span> <span>Entiendes el porqué de los protocolos</span>
+              </div>
+              <div class="check-item font-montserrat" style="color: var(--color-text);"><span
+                  style="color: var(--color-primary);">✔</span> <span>Aprendes a escuchar tu cuerpo</span>
+              </div>
+              <div class="check-item font-montserrat" style="color: var(--color-text);"><span
+                  style="color: var(--color-primary);">✔</span> <span>Sales del "hago dieta / no hago nada"</span>
+              </div>
+            </div>
+            <p class="font-montserrat"
+              style="font-size: 0.9rem; color: var(--color-primary); font-weight: 600; margin-bottom: 1.5rem;">📆 Fecha:
+              Disponible a partir del 12 de Enero</p>
+            <p class="font-montserrat"
+              style="font-size: 0.9rem; color: var(--color-primary); font-weight: 600; margin-bottom: 1.5rem;">🎁 Bono:
+              Grupo privado de WhatsApp solo en enero</p>
+            <button onclick="scrollToForm('Clase Reset (grabada)')"
+              class="btn-primary font-montserrat"
+              style="background-color: var(--color-action); color: #ffffff; padding: 0.875rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 600; border: none; cursor: pointer; width: 100%;">
+              👉 Ver la clase reset </button>
+          </div>
+
+          <!-- Producto 4 -->
+          <div class="card-product"
+            style="background-color: var(--color-surface); padding: 0 2rem 2rem 2rem; border-radius: 16px;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">
+              <div class="mb-8 solutions-wrapper">
+                <img class="solutions-svg" src="img/TallerMasas.png">
+              </div>
+            </div>
+            <h3 class="font-raleway"
+              style="font-size: 1.75rem; color: var(--color-text); font-weight: 600; margin-bottom: 0.5rem;">Taller
+              Masas para Familias Felices</h3>
+            <p class="font-montserrat"
+              style="font-size: 2rem; color: var(--color-primary); font-weight: 700; margin-bottom: 0.25rem;">$17</p>
+            <p class="font-montserrat"
+              style="font-size: 0.9rem; color: #d9534f; font-weight: 600; margin-bottom: 1.5rem;">Cupos limitados</p>
+            <p class="font-montserrat" style="font-size: 0.95rem; color: var(--color-text); margin-bottom: 1rem;">Clase
+              online de 3 horas donde aprenden:</p>
+            <div
+              style="background-color: var(--color-secondary); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+              <p class="font-montserrat" style="font-size: 0.9rem; color: var(--color-text); margin-bottom: 0.5rem;">
+                <strong>– Pizza</strong><br><strong>– Brownies</strong><br><strong>– Empanadas</strong></p>
+              <p class="font-montserrat" style="font-size: 0.85rem; color: var(--color-text); margin-top: 1rem;">Con: ✔
+                Yuca ✔ Batata ✔ Ocumo chino</p>
+            </div>
+            <div
+              style="background-color: var(--color-background); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+              <p class="font-montserrat" style="font-size: 0.85rem; color: var(--color-text);">
+                <strong>Incluye:</strong><br>
+                – Grupo WhatsApp<br>
+                – Lista de compra<br>
+                – PDF con recetas</p>
+            </div>
+            <p class="font-montserrat"
+              style="font-size: 0.9rem; color: var(--color-primary); font-weight: 600; margin-bottom: 1.5rem;">📆 Fecha:
+              Sábado 31 Enero 2:00 p.m. hora Venezuela</p>
+            <p class="font-montserrat"
+              style="font-size: 0.9rem; color: var(--color-primary); font-weight: 600; margin-bottom: 1.5rem;">🎁 Bono:
+              15% OFF en productos Ashwel</p>
+            <button onclick="scrollToForm('Taller Masas para Familias Felices')"
+              class="btn-primary font-montserrat"
+              style="background-color: var(--color-action); color: #ffffff; padding: 0.875rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 600; border: none; cursor: pointer; width: 100%;">
+              👉 Reservar mi cupo </button>
+          </div>
+
+          <!-- Todos los Productos -->
+          <div class="card-product md:todo"
+            style="background-color: var(--color-surface); padding: 0 2rem 2rem 2rem; border-radius: 16px;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">
+              <div class="mb-8 solutions-wrapper">
+                <img class="solutions-svg" src="img/TodoReset.png">
+              </div>
+            </div>
+            <h3 class="font-raleway"
+              style="font-size: 1.75rem; color: var(--color-text); font-weight: 600; margin-bottom: 0.5rem;">Todo el
+              programa de Enero a un precio especial</h3>
+            <p class="font-montserrat"
+              style="font-size: 2rem; color: var(--color-primary); font-weight: 700; margin-bottom: 0.25rem;">$47</p>
+            <p class="font-montserrat"
+              style="font-size: 0.9rem; color: #d9534f; font-weight: 600; margin-bottom: 1.5rem;">Cupos limitados</p>
+
+            <div
+              style="background-color: var(--color-secondary); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+              <p class="font-montserrat" style="font-size: 0.9rem; color: var(--color-text); margin-bottom: 0.5rem;">
+                <strong>Acceso total a todo nuestro programa del mes de Enero</strong></p>
+              <p class="font-montserrat" style="font-size: 0.85rem; color: var(--color-text); margin-top: 1rem;">
+                De cada oferta de las aquí presentada, tendrás acceso también a: <br>
+                ✔ Contenido y productos.
+                ✔ Ofertas y descuentos.
+                ✔ Bonos</p>
+            </div>
+            <div
+              style="background-color: var(--color-background); padding: 1rem; border-radius: 8px;">
+              <p class="font-montserrat" style="font-size: 0.85rem; color: var(--color-text);">
+                <strong>Incluye:</strong><br>
+                – Plan de Cocina Consciente – 7 días <strong>(Costo total $15)</strong><br>
+                – Kit Reset Ashwel <strong>(Costo total $25)</strong><br>
+                – Clase grabada Reset, Reinicia tu salud <strong>(Costo total $7)</strong><br>
+                – Taller Masas para Familias Felices <strong>(Costo total $17)</strong></p>
+            </div>
+            <p class="font-montserrat text-center pt-8" style="font-size: 1.1rem; color: var(--color-text);">
+              Programa valorado en <strong style="color: #d9534f;">$64</strong>
+            </p>
+            <p class="font-montserrat text-center" style="font-size: 1.5rem; color: var(--color-text);">
+              Puedes llevarlo por tan solo <strong style="color: #5cb85c;">$47</strong>
+            </p>
+            <p class="font-montserrat text-center pb-8" style="font-size: 0.95rem; color: var(--color-text);">
+              Si pagas de contado o en 2 cuotas de $25 c/u
+            </p>
+
+            <button onclick="scrollToForm('Los quiero todos')"
+              class="btn-primary font-montserrat"
+              style="background-color: var(--color-action); color: #ffffff; padding: 0.875rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 600; border: none; cursor: pointer; width: 100%;">
+              👉 Reservar mi cupo </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4 - ¿PARA QUIÉN ES ESTO? -->
+    <section class="w-full py-16 px-6" style="background-color: #ffffff;">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-raleway text-center mb-10"
+          style="font-size: 2.25rem; color: var(--color-primary); font-weight: 600;">¿Para quién es esto?</h2>
+        <div
+          style="background-color: var(--color-secondary); padding: 2.5rem; border-radius: 16px; margin-bottom: 2rem;">
+          <div class="check-item font-montserrat"
+            style="color: var(--color-text); font-size: 1.125rem; margin-bottom: 1rem;"><span
+              style="color: var(--color-primary); font-size: 1.5rem;">✔</span> <span>Familias que quieren comer mejor
+              sin estrés</span>
+          </div>
+          <div class="check-item font-montserrat"
+            style="color: var(--color-text); font-size: 1.125rem; margin-bottom: 1rem;"><span
+              style="color: var(--color-primary); font-size: 1.5rem;">✔</span> <span>Personas cansadas de dietas
+              extremas</span>
+          </div>
+          <div class="check-item font-montserrat"
+            style="color: var(--color-text); font-size: 1.125rem; margin-bottom: 0;"><span
+              style="color: var(--color-primary); font-size: 1.5rem;">✔</span> <span>Quienes quieren volver al
+              equilibrio después de diciembre</span>
+          </div>
+        </div>
+        <div
+          style="background-color: var(--color-background); padding: 2rem; border-radius: 16px; border-left: 4px solid #d9534f;">
+          <p class="font-montserrat" style="color: var(--color-text); font-size: 1.125rem;"><span
+              style="color: #d9534f; font-size: 1.5rem; margin-right: 0.5rem;">❌</span> <strong>No es para quien busca
+              soluciones mágicas o rápidas.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5 - AUTORIDAD SUAVE -->
+    <section class="w-full pt-16 px-6" style="background-color: var(--color-background);">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="family-wrapper mb-8">
+          <img class="family-svg" src="img/familia.png">
+        </div>
+        <p class="font-raleway"
+          style="font-size: 1.5rem; color: var(--color-text); font-weight: 400; line-height: 1.8; margin-bottom: 1rem;">
+          Ashwel nace desde la cocina real, la experiencia y el respeto por el cuerpo.</p>
+        <p class="font-montserrat" style="font-size: 1.25rem; color: var(--color-primary); font-weight: 500;">No creemos
+          en modas. Creemos en procesos que se sostienen.</p>
+        
+        <!-- Espacio para testimonios -->
+        <div class="mt-28 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <div class="mb-20"
+            style="background-color: #ffffff; padding: 0; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <div class="testimonial-wrapper">
+              <img class="testimonial-svg" src="img/Testimonio2.png">
+            </div>
+            <p class="font-montserrat m-4" style="font-size: 1.2rem; color: var(--color-primary); font-weight: 600;">
+              Clase Reset - Reinicia tu salud</p>
+          </div>
+          <div class="mb-20"
+            style="background-color: #ffffff; padding: 0; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <div class="testimonial-wrapper">
+              <img class="testimonial-svg" src="img/Testimonio1.png">
+            </div>
+            <p class="font-montserrat m-4" style="font-size: 1.2rem; color: var(--color-primary); font-weight: 600;">
+              Taller Masas para Familias Felices</p>
+          </div>
+          <div class="mb-20"
+            style="background-color: #ffffff; padding: 0; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <div class="testimonial-wrapper">
+              <img class="testimonial-svg" src="img/Testimonio3.png">
+            </div>
+            <p class="font-montserrat m-4" style="font-size: 1.2rem; color: var(--color-primary); font-weight: 600;">
+              Plan de Cocina Consciente</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6 - FAQs -->
+    <section class="w-full py-16 px-6" style="background-color: #ffffff;">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-raleway text-center mb-10"
+          style="font-size: 2.25rem; color: var(--color-primary); font-weight: 600;">Preguntas Frecuentes</h2>
+        <div
+          style="background-color: var(--color-secondary); padding: 2.5rem; border-radius: 16px; margin-bottom: 2rem;">
+          <div class="check-item font-montserrat"
+            style="color: var(--color-text); font-size: 1.125rem; margin-bottom: 0;"><span
+              style="color: var(--color-primary); font-size: 1.5rem;">✔</span> 
+              <span>¿Puedo hacer más de un programa?</span>
+          </div>
+          <div class="check-item font-montserrat"
+            style="color: var(--color-text); font-size: 1.125rem; margin-bottom: 0;"><span
+              style="color: var(--color-secondary); font-size: 1.5rem;">✔</span> 
+              <span>Sí, se complementan perfectamente.</span>
+          </div>
+          <div class="check-item font-montserrat"
+            style="color: var(--color-text); font-size: 1.125rem; margin-bottom: 0;"><span
+              style="color: var(--color-primary); font-size: 1.5rem;">✔</span> 
+              <span>¿Necesito experiencia previa?</span>
+          </div>
+          <div class="check-item font-montserrat"
+            style="color: var(--color-text); font-size: 1.125rem; margin-bottom: 0;"><span
+              style="color: var(--color-secondary); font-size: 1.5rem;">✔</span> 
+              <span>No. Todo está explicado paso a paso.</span>
+          </div>
+          <div class="check-item font-montserrat"
+            style="color: var(--color-text); font-size: 1.125rem; margin-bottom: 0;"><span
+              style="color: var(--color-primary); font-size: 1.5rem;">✔</span> 
+              <span>¿Cómo son los pagos?</span>
+          </div>
+          <div class="check-item font-montserrat"
+            style="color: var(--color-text); font-size: 1.125rem; margin-bottom: 0;"><span
+              style="color: var(--color-secondary); font-size: 1.5rem;">✔</span> 
+              <span>Pago móvil Bancamiga, Binance o PayPal.</span>
+          </div>
+          <div class="check-item font-montserrat"
+            style="color: var(--color-text); font-size: 1.125rem; margin-bottom: 0;"><span
+              style="color: var(--color-primary); font-size: 1.5rem;">✔</span> 
+              <span>¿Qué pasa si no puedo estar en vivo?</span>
+          </div>
+          <div class="check-item font-montserrat"
+            style="color: var(--color-text); font-size: 1.125rem; margin-bottom: 0;"><span
+              style="color: var(--color-secondary); font-size: 1.5rem;">✔</span> 
+              <span>Las clases quedan grabadas.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7 - Llamado Final -->
+    <section class="w-full py-16 px-6" style="background-color: var(--color-background);">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="close-wrapper mb-8">
+          <img class="close-svg" src="img/Cierre.png">
+        </div>
+        <p class="font-raleway"
+          style="font-size: 1.5rem; color: var(--color-text); font-weight: 400; line-height: 1.8; margin-bottom: 1rem;">
+          Este enero puedes seguir improvisando…</p>
+        <p class="font-montserrat mb-4" style="font-size: 2rem; color: var(--color-primary); font-weight: 500;">
+          ó empezar el año cuidándote de verdad.</p>
+          
+        <!-- llamado a la accion -->
+        <button
+          onclick="scrollToForm('Los quiero todos')" class="btn-primary font-montserrat"
+          style="background-color: var(--color-action); color: #ffffff; padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.125rem; font-weight: 600; border: none; cursor: pointer; margin-bottom: 2rem;">
+          👉 Elegir mi programa de enero </button>
+        
+        <p class="font-montserrat mb-4" style="font-size: 1.5rem; color: var(--color-primary); font-weight: 500;">
+          Porque alimentar con amor es también un acto de valentía!!!</p>
+      </div>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section id="formulario" class="w-full py-16 px-6" style="background-color: #ffffff;">
+      <div class="max-w-3xl mx-auto">
+        <div style="background-color: var(--color-secondary); padding: 3rem; border-radius: 20px;">
+          <h2 class="font-raleway text-center mb-3"
+            style="font-size: 2.5rem; color: var(--color-text); font-weight: 600;">Comienza tu Reset</h2>
+          <p class="font-montserrat text-center mb-8"
+            style="font-size: 1.125rem; color: var(--color-text); opacity: 0.95;">Completa el formulario y nos pondremos
+            en contacto contigo</p>
+          <form id="contact-form" style="background-color: #ffffff; padding: 2rem; border-radius: 16px;">
+            <div class="form-group"><label for="nombre" class="font-montserrat">Nombre y Apellido *</label> <input
+                type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+            </div>
+            <div class="form-group"><label for="email" class="font-montserrat">Email *</label> <input type="email"
+                id="email" name="email" required placeholder="tu@email.com">
+            </div>
+            <div class="form-group"><label for="telefono" class="font-montserrat">Teléfono (opcional)</label> <input
+                type="tel" id="telefono" name="telefono" placeholder="+58 424 123 4567">
+            </div>
+            <div class="form-group"><label for="producto" class="font-montserrat">¿Qué producto te interesa? *</label>
+              <select id="producto" name="producto" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Plan de Cocina Consciente – 7 días">Plan de Cocina Consciente – 7 días</option>
+                <option value="Kit Reset Ashwel">Kit Reset Ashwel</option>
+                <option value="Clase Reset (grabada)">Clase Reset (grabada)</option>
+                <option value="Taller Masas para Familias Felices">Taller Masas para Familias Felices</option>
+                <option value="Los quiero todos">Los quiero todos</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="dolor" class="font-montserrat">¿Cuál es tu principal motivación?
+                *</label> <select id="dolor" name="dolor" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Deseo bajar de peso">Deseo bajar de peso</option>
+                <option value="Deseo recuperarme de los abusos del mes de diciembre">Deseo recuperarme de los abusos del
+                  mes de diciembre</option>
+                <option value="Deseo apoyar a un hijo o familiar con necesidades especiales">Deseo apoyar a un hijo o
+                  familiar con necesidades especiales</option>
+                <option value="Deseo mejorar la alimentación de mi Familia">Deseo mejorar la alimentación de mi Familia
+                </option>
+              </select>
+            </div>
+            <button type="submit" id="submit-btn" class="btn-primary font-montserrat"
+              style="background-color: var(--color-action); color: #ffffff; padding: 1rem; border-radius: 50px; font-size: 1rem; font-weight: 600; border: none; cursor: pointer; width: 100%;">
+              Enviar mi solicitud </button>
+            <div id="form-message"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="w-full py-8 px-6" style="background-color: var(--color-action);">
+      <div class="max-w-6xl mx-auto text-center">
+        <p id="footer-text" class="font-montserrat" style="font-size: 0.9rem; color: #ffffff;">© 2025 Ashwel. Todos los
+          derechos reservados.</p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    // Configuración por defecto
+    const defaultConfig = {
+      background_color: "#374c3a",
+      surface_color: "#ffffff",
+      text_color: "#374c3a",
+      primary_action_color: "#374c3a",
+      secondary_action_color: "#a0c9a3",
+      font_family: "Raleway",
+      font_size: 16,
+      hero_title_1: "Enero no es para castigarte.",
+      hero_title_2: "Es para volver al equilibrio, desde la cocina.",
+      hero_subtitle: "Programas conscientes para resetear tu cuerpo y simplificar tu alimentación, creados para familias reales.",
+      problema_intro: "Después de diciembre vienen:",
+      puente_texto: "En Ashwel creemos en otra forma: volver al equilibrio, con comida real y procesos simples.",
+      footer_text: "© 2025 Ashwel. Todos los derechos reservados."
+    };
+
+    let currentRecordCount = 0;
+
+    // Data Handler
+    const dataHandler = {
+      onDataChanged(data) {
+        currentRecordCount = data.length;
+        console.log(`Total de registros: ${currentRecordCount}`);
+      }
+    };
+
+    // Inicializar Data SDK
+    async function initDataSdk() {
+      if (window.dataSdk) {
+        const initResult = await window.dataSdk.init(dataHandler);
+        if (!initResult.isOk) {
+          console.error("Error al inicializar Data SDK");
+        }
+      }
+    }
+
+    // Scroll al formulario con producto preseleccionado
+    function scrollToForm(producto) {
+      const form = document.getElementById('formulario');
+      const select = document.getElementById('producto');
+
+      if (select) {
+        select.value = producto;
+      }
+
+      if (form) {
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Manejo del formulario
+    document.getElementById('contact-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const submitBtn = document.getElementById('submit-btn');
+      const messageDiv = document.getElementById('form-message');
+
+      // Deshabilitar botón y mostrar loading
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Enviando... <span class="spinner"></span>';
+      messageDiv.innerHTML = '';
+
+      // Recopilar datos del formulario
+      const formData = {
+        nombre_apellido: document.getElementById('nombre').value,
+        email: document.getElementById('email').value,
+        telefono: document.getElementById('telefono').value || 'No proporcionado',
+        producto: document.getElementById('producto').value,
+        dolor: document.getElementById('dolor').value,
+        fecha: new Date().toISOString()
+      };
+
+      // Guardar en Data SDK
+      if (window.dataSdk) {
+        const result = await window.dataSdk.create(formData);
+
+        if (result.isOk) {
+          messageDiv.innerHTML = '<div class="success-message font-montserrat">✅ ¡Gracias! Tu solicitud ha sido enviada correctamente. Nos pondremos en contacto contigo pronto.</div>';
+          document.getElementById('contact-form').reset();
+        } else {
+          messageDiv.innerHTML = '<div class="error-message font-montserrat">❌ Hubo un error al enviar tu solicitud. Por favor, intenta nuevamente.</div>';
+        }
+      } else {
+        messageDiv.innerHTML = '<div class="error-message font-montserrat">❌ Error de sistema. Por favor, intenta más tarde.</div>';
+      }
+
+      // Rehabilitar botón
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar mi solicitud';
+    });
+
+    // Funciones del Element SDK
+    async function onConfigChange(config) {
+      const baseFontSize = config.font_size || defaultConfig.font_size;
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseFontStack = 'sans-serif';
+
+      // Actualizar variables CSS
+      const root = document.documentElement;
+      root.style.setProperty('--color-primary', config.background_color || defaultConfig.background_color);
+      root.style.setProperty('--color-secondary', config.secondary_action_color || defaultConfig.secondary_action_color);
+      root.style.setProperty('--color-text', config.text_color || defaultConfig.text_color);
+      root.style.setProperty('--color-surface', config.surface_color || defaultConfig.surface_color);
+      root.style.setProperty('--color-action', config.primary_action_color || defaultConfig.primary_action_color);
+
+      // Actualizar fuentes
+      document.getElementById('hero-title-1').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.getElementById('hero-title-1').style.fontSize = `${baseFontSize * 1.875}px`;
+
+      document.getElementById('hero-title-2').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.getElementById('hero-title-2').style.fontSize = `${baseFontSize * 1.875}px`;
+
+      document.getElementById('hero-subtitle').style.fontSize = `${baseFontSize * 1.25}px`;
+
+      // Actualizar textos
+      document.getElementById('hero-title-1').textContent = config.hero_title_1 || defaultConfig.hero_title_1;
+      document.getElementById('hero-title-2').textContent = config.hero_title_2 || defaultConfig.hero_title_2;
+      document.getElementById('hero-subtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+      document.getElementById('problema-intro').textContent = config.problema_intro || defaultConfig.problema_intro;
+      document.getElementById('footer-text').textContent = config.footer_text || defaultConfig.footer_text;
+
+      const puenteTexto = document.querySelector('#puente-solucion p');
+      if (puenteTexto && config.puente_texto) {
+        const parts = (config.puente_texto || defaultConfig.puente_texto).split(':');
+        if (parts.length === 2) {
+          puenteTexto.innerHTML = `${parts[0]}:<br><span style="font-weight: 300;">${parts[1]}</span>`;
+        } else {
+          puenteTexto.textContent = config.puente_texto || defaultConfig.puente_texto;
+        }
+      }
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.surface_color || defaultConfig.surface_color,
+            set: (value) => {
+              config.surface_color = value;
+              window.elementSdk.setConfig({ surface_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => config.primary_action_color || defaultConfig.primary_action_color,
+            set: (value) => {
+              config.primary_action_color = value;
+              window.elementSdk.setConfig({ primary_action_color: value });
+            }
+          },
+          {
+            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+            set: (value) => {
+              config.secondary_action_color = value;
+              window.elementSdk.setConfig({ secondary_action_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["hero_title_1", config.hero_title_1 || defaultConfig.hero_title_1],
+        ["hero_title_2", config.hero_title_2 || defaultConfig.hero_title_2],
+        ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+        ["problema_intro", config.problema_intro || defaultConfig.problema_intro],
+        ["puente_texto", config.puente_texto || defaultConfig.puente_texto],
+        ["footer_text", config.footer_text || defaultConfig.footer_text]
+      ]);
+    }
+
+    // Inicializar SDKs
+    initDataSdk();
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    // Hacer scrollToForm global
+    window.scrollToForm = scrollToForm;
+  </script>
+  <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9b547ebe965bf471',t:'MTc2Njk2MDk1Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
