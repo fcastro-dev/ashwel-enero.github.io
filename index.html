@@ -292,7 +292,7 @@
           onclick="scrollToForm('Los quiero todos')" class="btn-primary font-montserrat"
           style="background-color: var(--color-action); color: #ffffff; padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.125rem; font-weight: 600; border: none; cursor: pointer; margin-bottom: 2rem;">
           👉 Quiero mi reset de enero </button>
-        <div class="mt-8 max-w-2xl mx-auto">
+        <div class="my-8 max-w-2xl mx-auto">
           <div
             style="background-color: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
             <div class="check-item font-montserrat" style="color: var(--color-text); font-size: 0.95rem;"><span
@@ -304,6 +304,22 @@
                 último momento.</span>
             </div>
           </div>
+        </div>
+
+        <div class="mt-16 max-w-6xl mx-auto text-center" style="margin-bottom: 1rem;">
+          <a href="https://wa.me/584142178738" target="_blank" 
+            class="btn-primary font-montserrat"
+            style="background-color: var(--color-action); color: #ffffff; padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.125rem; font-weight: 600; border: none; cursor: pointer; margin-right: 0.5rem;">
+            <img src="img/whatsapp.png" alt="WhatsApp" style="vertical-align: middle; margin-right: 8px; width: 40px; height: 40px; display: inline;">
+            Conversemos
+          </a>
+
+          <a href="https://www.instagram.com/_ashwel/" target="_blank" 
+            class="btn-primary font-montserrat"
+            style="background-color: var(--color-action); color: #ffffff; padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.125rem; font-weight: 600; border: none; cursor: pointer;">
+            <img src="img/instagram.png" alt="WhatsApp" style="vertical-align: middle; margin-right: 8px; width: 40px; height: 40px; display: inline;">
+            Conocenos
+          </a>
         </div>
       </div>
     </section>
@@ -810,6 +826,21 @@
     <!-- FOOTER -->
     <footer class="w-full py-8 px-6" style="background-color: var(--color-action);">
       <div class="max-w-6xl mx-auto text-center">
+        <div class="max-w-6xl mx-auto text-center" style="margin-bottom: 1rem;">
+          <a href="https://wa.me/584142178738" target="_blank" 
+            class="btn-primary font-montserrat"
+            style="cursor: pointer; color: #ffffff; margin-right: 0.5rem;">
+            <img src="img/whatsapp.png" alt="WhatsApp" style="vertical-align: middle; margin-right: 8px; width: 40px; height: 40px; display: inline;">
+            Conversemos
+          </a>
+
+          <a href="https://www.instagram.com/_ashwel/" target="_blank" 
+            class="btn-primary font-montserrat"
+            style="cursor: pointer; color: #ffffff;">
+            <img src="img/instagram.png" alt="WhatsApp" style="vertical-align: middle; margin-right: 8px; width: 40px; height: 40px; display: inline;">
+            Conocenos
+          </a>
+        </div>
         <p id="footer-text" class="font-montserrat" style="font-size: 0.9rem; color: #ffffff;">© 2025 Ashwel. Todos los
           derechos reservados.</p>
       </div>
@@ -925,7 +956,22 @@
         method: 'POST',
         data: formData,
         success: function(response) {
-          messageDiv.innerHTML = '<div class="success-message font-montserrat">✅ ¡Gracias! Tu solicitud ha sido enviada correctamente. Nos pondremos en contacto contigo pronto.</div>';
+          messageDiv.innerHTML = `<div class="success-message font-montserrat">
+              ✅ ¡Gracias! Tu solicitud ha sido enviada correctamente. 
+              Nos pondremos en contacto contigo pronto.
+
+              <br><br>
+
+              Contactanos:<br><br>
+
+              <a href="https://wa.me/584142178738" target="_blank" 
+              type="button"
+              class="btn-primary font-montserrat"
+              style="color: var(--color-text); padding: 0.875rem; border-radius: 50px; font-size: 1rem; font-weight: 600; border: 1px solid var(--color-text); cursor: pointer; width: 100%;">
+              <img src="img/whatsapp.png" alt="WhatsApp" style="vertical-align: middle; margin-right: 8px; width: 40px; height: 40px; display: inline;">Hablemos 
+              </a>
+
+            </div>`;
           document.getElementById('contact-form').reset();
         },
         error: function(error) {
