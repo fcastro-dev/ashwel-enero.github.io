@@ -20,6 +20,7 @@
       --color-surface: #ffffff;
       --color-background: #edf2ee;
       --color-action: #374c3a;
+      --color-crayola: #E7CA89;
     }
 
     body {
@@ -200,7 +201,7 @@
 
     .family-svg {
       width: 100%;
-      height: 18rem;
+      height: auto;
       display: block;
       border-radius: 16px;
       max-width: 25rem;
@@ -234,6 +235,22 @@
       display: block;
       border-radius: 16px;
       max-width: 40rem;
+    }
+
+    .flicker {
+      animation: parpadear 1.5s infinite backwards steps(2);
+    }
+
+    .neon {
+      color: var(--color-primary);
+      text-shadow: 0 0 5px yellow, 0 0 15px yellow, 0 0 30px yellow;
+    }
+
+    @keyframes parpadear {
+      to {
+        background-color: var(--color-crayola);
+        text-shadow: none;
+      }
     }
     
   </style>
@@ -285,28 +302,23 @@
         <h1 id="hero-title-2" class="font-raleway"
           style="font-size: 3rem; font-weight: 600; color: var(--color-primary); line-height: 1.2; margin-bottom: 2rem;">
           Es para volver al equilibrio, desde la cocina.</h1>
+        
+        <div class="family-wrapper mb-8">
+          <iframe width="560" y height="315" src="https://www.youtube-nocookie.com/embed/JzDw6j9eSx8?si=xdWvBhZsAxmMgkIT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
         <p id="hero-subtitle" class="font-montserrat max-w-3xl mx-auto"
           style="font-size: 1.25rem; color: #6b6b6b; margin-bottom: 2.5rem; font-weight: 400;">Programas conscientes
-          para resetear tu cuerpo y simplificar tu alimentación, creados para familias reales.</p>
+          para resetear tu cuerpo y simplificar tu alimentación, creados para familias reales.
+        </p>
+
         <button
           onclick="scrollToForm('Los quiero todos')" class="btn-primary font-montserrat"
           style="background-color: var(--color-action); color: #ffffff; padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.125rem; font-weight: 600; border: none; cursor: pointer; margin-bottom: 2rem;">
-          👉 Quiero mi reset de enero </button>
-        <div class="my-8 max-w-2xl mx-auto">
-          <div
-            style="background-color: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-            <div class="check-item font-montserrat" style="color: var(--color-text); font-size: 0.95rem;"><span
-                style="color: var(--color-primary); font-weight: 600;">✔</span> <span><strong>Pagos disponibles en
-                  Venezuela:</strong> Zelle, Pago Móvil, Transferencia</span>
-            </div>
-            <div class="check-item font-montserrat" style="color: var(--color-primary); font-size: 0.95rem;"><span
-                style="font-weight: 600;">⚠</span> <span><strong>Cupos y unidades limitadas.</strong> No esperes hasta
-                último momento.</span>
-            </div>
-          </div>
-        </div>
+          👉 Quiero mi reset de enero 
+        </button>
 
-        <div class="mt-16 max-w-6xl mx-auto text-center" style="margin-bottom: 1rem;">
+        <div class="mt-4 max-w-6xl mx-auto text-center" style="margin-bottom: 1rem;">
           <a href="https://wa.me/584142178738" target="_blank" 
             class="btn-primary font-montserrat"
             style="background-color: var(--color-action); color: #ffffff; padding: 1rem 1rem; border-radius: 50px; font-size: 0.8rem; border: none; cursor: pointer; margin-right: 0.5rem;">
@@ -426,12 +438,13 @@
             </div>
 
             <div
+              class="flicker"
               style="background-color: var(--color-background); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; cursor: pointer;">
               <p 
                 class="font-montserrat" 
                 style="font-size: 0.85rem; color: var(--color-text); display: flex; justify-content: space-between; align-items: center;"
                 onclick="toggleVideo()">
-                <strong>Ver clase gratuita</strong>
+                <strong class="neon">Ver clase gratuita</strong>
                 <span id="play">▶️</span>
                 <span id="stop" style="display: none;">⏹️</span>
               </p>
@@ -635,6 +648,20 @@
           </div>
         </div>
       </div>
+
+      <div class="max-w-6xl mx-auto mt-8">
+        <div
+          style="background-color: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+          <div class="check-item font-montserrat" style="color: var(--color-text); font-size: 0.95rem;"><span
+              style="color: var(--color-primary); font-weight: 600;">✔</span> <span><strong>Pagos disponibles en
+                Venezuela:</strong> Zelle, Pago Móvil, Transferencia</span>
+          </div>
+          <div class="check-item font-montserrat" style="color: var(--color-primary); font-size: 0.95rem;"><span
+              style="font-weight: 600;">⚠</span> <span><strong>Cupos y unidades limitadas.</strong> No esperes hasta
+              último momento.</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SECCIÓN 4 - ¿PARA QUIÉN ES ESTO? -->
@@ -673,7 +700,7 @@
     <section class="w-full pt-16 px-6" style="background-color: var(--color-background);">
       <div class="max-w-4xl mx-auto text-center">
         <div class="family-wrapper mb-8">
-          <iframe width="560" y height="315" src="https://www.youtube-nocookie.com/embed/JzDw6j9eSx8?si=xdWvBhZsAxmMgkIT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <img class="family-svg" src="img/familia.png">
         </div>
         <p class="font-raleway"
           style="font-size: 1.5rem; color: var(--color-text); font-weight: 400; line-height: 1.8; margin-bottom: 1rem;">
