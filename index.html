@@ -424,6 +424,22 @@
                 por WhatsApp<br>
                 – Guía paso a paso por 7 días</p>
             </div>
+
+            <div
+              style="background-color: var(--color-background); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; cursor: pointer;">
+              <p 
+                class="font-montserrat" 
+                style="font-size: 0.85rem; color: var(--color-text); display: flex; justify-content: space-between; align-items: center;"
+                onclick="toggleVideo()">
+                <strong>Ver clase gratuita</strong>
+                <span id="play">▶️</span>
+                <span id="stop" style="display: none;">⏹️</span>
+              </p>
+            </div>
+            <div id="videoClase" class="family-wrapper mb-8" style="display: none;">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/in9wDdnQORg?si=pgE1O4xLJ3ROHq0t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
             <p class="font-montserrat"
               style="font-size: 0.9rem; color: var(--color-primary); font-weight: 600; margin-bottom: 1.5rem;">📆 Fecha:
               Del 19 al 25 de Enero</p>
@@ -1116,6 +1132,18 @@
 
     // Hacer scrollToForm global
     window.scrollToForm = scrollToForm;
+
+    function toggleVideo() {
+      if ( $("#stop").is(":visible") ) {
+        $("#stop").hide();
+        $("#play").show();
+        $("#videoClase").hide();
+      } else {
+        $("#stop").show();
+        $("#play").hide();
+        $("#videoClase").show();
+      }
+    }
   </script>
   <script>/*(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9b547ebe965bf471',t:'MTc2Njk2MDk1Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();*/</script>
 </body>
