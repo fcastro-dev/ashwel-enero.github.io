@@ -316,10 +316,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 .success {
-    color: var(--primary);
+    color: var(--secondary);
 }
 .error {
-    color: var(--secondary);
+    color: var(--bg-creme);
 }
 
 /* Footer CTA */

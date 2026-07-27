@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashwel | Alimentación Consciente para Familias</title>
     
-    
-
+    <!-- JQuery 3.7.1 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -235,22 +235,34 @@
             <div id="leadFormContainer" class="form-container hidden">
                 <form id="leadForm">
                     <div class="form-group">
-                        <label for="name">Nombre</label>
+                        <label for="name">Nombre*</label>
                         <input type="text" id="name" name="name" maxlength="50" required placeholder="Tu nombre">
                     </div>
                     <div class="form-group">
-                        <label for="email">Correo electrónico</label>
+                        <label for="email">Correo electrónico*</label>
                         <input type="email" id="email" name="email" maxlength="50" required placeholder="Tu email">
                     </div>
+                    <div class="form-group row">
+                        <div class=" col-4 pe-1">
+                            <label for="phone">Cod Pais</label>
+                            <input type="text" id="codephone" name="codephone" maxlength="5" pattern="^\+[0-9]{1,4}$" placeholder="Ej: +58">
+                        </div>
+                        <div class="col-8 ps-1">
+                            <label for="phone" class="d-flex justify-content-between"><span>Teléfono</span><span class="ms-2">(Opcional)</span></label>
+                            <input type="tel" id="phone" name="phone" maxlength="15" pattern="^[0-9]{3}-[0-9]{6}\d*$" placeholder="Ej: 414-9998877" autocomplete="tel">
+                            
+                        </div>
+                        <small class="col-12">Podremos contactarle vía WhatsApp. Ej: +58 414-9998877</small>
+                    </div>
                     <div class="form-group">
-                        <label for="children">¿Hay niños en casa?</label>
+                        <label for="children">¿Hay niños en casa?*</label>
                         <input type="text" id="children" name="children" maxlength="50" required placeholder="Ej: Sí, 2 niños">
                     </div>
                     <div class="form-group">
                         <label for="conditions">¿Personas con condición especial? (Indica cuántas y cuál)</label>
                         <input type="text" id="conditions" name="conditions" maxlength="50" required placeholder="Ej: 1 niño con TDAH">
                     </div>
-                    <button type="submit" class="btn btn-secondary">Enviar y ver clase</button>
+                    <button type="submit" class="btn btn-secondary w-100">Enviar y ver clase</button>
                     <p id="formMessage" class="form-message"></p>
                 </form>
             </div>
