@@ -1,0 +1,466 @@
+/* =========================================================
+   Taller "Masas para Familias Felices" – Ashwel
+   /education/taller-masas/css/styles.css
+   ========================================================= */
+
+/* ---------- Paleta de marca ---------- */
+:root {
+  --green-ashwel: #374C3A;
+  --green-life:   #A0C9A3;
+  --crayola:      #E7CA89;
+  --desert-sand:  #F1C6A8;
+  --beau-blue:    #B8D4E7;
+  --white-calm:   #EDF2EE;
+
+  /* Tintes derivados de la paleta */
+  --bg-page:      color-mix(in srgb, var(--white-calm) 55%, #fff);
+  --bg-verde:     color-mix(in srgb, var(--green-life) 38%, var(--white-calm));
+  --bg-arena:     color-mix(in srgb, var(--desert-sand) 32%, var(--white-calm));
+  --text:         #2c3a2e;
+  --text-soft:    #4d5e50;
+
+  --font-body:    "Chillax", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-hand:    "Caveat", "Segoe Script", cursive;
+  --radius:       16px;
+}
+
+/* ---------- Base ---------- */
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg-page);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .btn, .navbar .nav-link, .label, .badge-taller {
+  font-family: var(--font-body);
+  color: var(--green-ashwel);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+h2 { font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2rem); margin-bottom: .9rem; }
+
+p { color: var(--text-soft); }
+
+img { max-width: 100%; height: auto; }
+
+a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
+  outline: 3px solid var(--green-ashwel);
+  outline-offset: 3px;
+}
+
+.section { padding: clamp(2.5rem, 5vw, 4rem) 0; }
+
+/* Etiqueta pequeña con ícono encima de cada bloque */
+.label {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--green-ashwel);
+  margin-bottom: 1rem;
+}
+.label i { font-size: 1.05rem; }
+
+/* ---------- Notas manuscritas ---------- */
+.nota {
+  font-family: var(--font-hand);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem);
+  line-height: 1.15;
+  color: var(--green-ashwel);
+  margin: 0;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: var(--bg-page);
+  box-shadow: 0 1px 0 rgba(55, 76, 58, .08);
+}
+.navbar { padding-block: .5rem; }
+.navbar-brand img { display: block; height: 52px; width: auto; }
+
+.navbar .nav-link {
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--green-ashwel);
+  padding: .5rem .25rem;
+  border-bottom: 2px solid transparent;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--green-ashwel);
+  border-bottom-color: var(--crayola);
+}
+.navbar-toggler {
+  border: 0;
+  font-size: 2rem;
+  color: var(--green-ashwel);
+  padding: 0 .25rem;
+}
+.navbar-toggler:focus { box-shadow: none; }
+
+@media (max-width: 991.98px) {
+  .navbar-collapse { padding: .5rem 0 1rem; }
+  .navbar .nav-link { padding: .6rem 0; }
+}
+
+/* ---------- Botones ---------- */
+.btn-ashwel-gold,
+.btn-ashwel-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-weight: 600;
+  font-size: .95rem;
+  border-radius: 999px;
+  padding: .8rem 1.6rem;
+  border: 0;
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+.btn-ashwel-gold {
+  background: var(--crayola);
+  color: var(--green-ashwel);
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 16px rgba(231, 202, 137, .55);
+}
+.btn-ashwel-gold:hover, .btn-ashwel-gold:focus {
+  background: color-mix(in srgb, var(--crayola) 85%, #fff);
+  color: var(--green-ashwel);
+  transform: translateY(-2px);
+}
+.btn-ashwel-dark {
+  background: var(--green-ashwel);
+  color: #fff;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  font-size: .85rem;
+}
+.btn-ashwel-dark:hover, .btn-ashwel-dark:focus {
+  background: color-mix(in srgb, var(--green-ashwel) 85%, #000);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.btn i { font-size: 1.15rem; }
+
+/* ---------- Datos (fecha, hora, duración, precio) ---------- */
+.datos {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+}
+.datos li {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  font-size: .82rem;
+  line-height: 1.35;
+  color: var(--green-ashwel);
+  font-weight: 500;
+}
+.datos li i { font-size: 1.4rem; line-height: 1; flex-shrink: 0; }
+.datos small { font-size: .72rem; font-weight: 400; color: var(--text-soft); }
+
+@media (min-width: 576px) {
+  .datos { grid-template-columns: repeat(4, auto); justify-content: start; gap: 1rem 1.5rem; }
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero { position: relative; background: var(--bg-page); }
+
+.hero__media { position: relative; }
+.hero__media img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.nota--hero {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  text-align: center;
+  transform: rotate(-5deg);
+  color: var(--green-ashwel);
+  background: rgba(237, 242, 238, .85);
+  padding: .4rem .9rem;
+  border-radius: 12px;
+}
+
+.hero__panel {
+  background: var(--bg-page);
+  padding: 2rem 0 2.5rem;
+}
+.hero__content { padding-inline: 1.5rem; }
+
+.badge-taller {
+  display: inline-block;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--green-ashwel);
+  background: color-mix(in srgb, var(--crayola) 35%, transparent);
+  border: 1px solid var(--crayola);
+  border-radius: 999px;
+  padding: .25rem .8rem;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 1.5rem + 3vw, 3.3rem);
+  letter-spacing: -.01em;
+  margin-bottom: 1rem;
+}
+.hero__lead {
+  font-size: clamp(1.05rem, 1rem + .4vw, 1.25rem);
+  font-weight: 500;
+  color: var(--green-ashwel);
+  line-height: 1.4;
+  margin-bottom: .75rem;
+}
+.hero__text { font-size: .98rem; max-width: 46ch; margin-bottom: 0; }
+
+/* Desktop: panel con borde curvo sobre la foto */
+@media (min-width: 992px) {
+  .hero {
+    display: flex;
+    min-height: 580px;
+    overflow: hidden;
+  }
+  .hero__panel {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 56%;
+    max-width: 56%;
+    display: flex;
+    align-items: center;
+    padding: 3rem 0;
+    border-radius: 0 240px 240px 0 / 0 300px 300px 0;
+  }
+  /* Alinea el texto con el contenedor de Bootstrap */
+  .hero__content {
+    width: 100%;
+    max-width: calc(var(--bs-breakpoint-lg, 992px) * .5);
+    margin-left: auto;
+    padding-left: 1rem;
+    padding-right: 5rem;
+  }
+  .hero__media {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 62%;
+    z-index: 1;
+  }
+  .hero__media img { height: 100%; }
+  .nota--hero {
+    top: 2.5rem;
+    right: 2.5rem;
+    background: none;
+    padding: 0;
+    font-size: 2rem;
+    transform: rotate(-6deg);
+  }
+}
+@media (min-width: 1200px) {
+  .hero__content { max-width: 600px; margin-left: calc((100vw - 1140px) / 2); padding-left: 0; }
+}
+@media (min-width: 1400px) {
+  .hero__content { margin-left: calc((100vw - 1320px) / 2); }
+}
+
+/* =========================================================
+   PROBLEMA / PROMESA
+   ========================================================= */
+.section--problema { background: var(--bg-page); }
+.section--problema h2 { max-width: 20ch; }
+.section--problema p:not(.label) { max-width: 46ch; }
+.promesa { font-size: 1.02rem; color: var(--text); }
+
+@media (min-width: 992px) {
+  .divider-lg { border-left: 1px solid rgba(55, 76, 58, .25); }
+}
+
+/* =========================================================
+   QUÉ VAMOS A PREPARAR
+   ========================================================= */
+.section--preparar { background: var(--bg-verde); }
+
+.receta img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+  margin-bottom: .7rem;
+}
+.receta h3 { font-size: .98rem; margin-bottom: .15rem; }
+.receta p { font-size: .88rem; margin: 0; }
+
+.nota--verde { transform: rotate(-4deg); }
+
+/* =========================================================
+   LA EXPERIENCIA
+   ========================================================= */
+.section--experiencia { background: var(--bg-page); }
+
+.experiencia__img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+@media (min-width: 992px) {
+  .experiencia__img { border-radius: 0 var(--radius) var(--radius) 0; }
+}
+
+.nota--mancha {
+  display: inline-block;
+  background: var(--green-life);
+  color: var(--green-ashwel);
+  padding: 1.5rem 2rem;
+  border-radius: 58% 42% 55% 45% / 50% 55% 45% 50%;
+  transform: rotate(-4deg);
+}
+.nota--mancha i { font-size: .9rem; vertical-align: middle; }
+
+/* =========================================================
+   QUÉ INCLUYE
+   ========================================================= */
+.section--incluye { background: var(--bg-arena); }
+
+.incluye__item {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  height: 100%;
+}
+.incluye__item i { font-size: 2rem; line-height: 1; color: var(--green-ashwel); }
+.incluye__item p { font-size: .88rem; line-height: 1.5; margin: 0; }
+
+@media (min-width: 992px) {
+  .incluye__lista > .col + .col .incluye__item {
+    border-left: 1px solid rgba(55, 76, 58, .25);
+    padding-left: 1.25rem;
+  }
+}
+
+.aviso {
+  position: relative;
+  background: var(--beau-blue);
+  border-radius: var(--radius);
+  padding: 1rem 2.6rem 1rem 1rem;
+}
+.aviso p { font-size: .76rem; line-height: 1.45; margin: 0; color: var(--green-ashwel); }
+.aviso__icono {
+  position: absolute;
+  right: .7rem;
+  bottom: .5rem;
+  font-size: 1.2rem;
+  color: var(--green-ashwel);
+}
+
+/* =========================================================
+   CTA FINAL
+   ========================================================= */
+.cta { background: var(--crayola); overflow: hidden; }
+
+.cta__media img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+@media (min-width: 992px) {
+  .cta__media img {
+    height: 100%;
+    min-height: 330px;
+    border-radius: 0 120px 120px 0 / 0 160px 160px 0;
+  }
+}
+
+.cta__content { padding: 2rem 1.5rem; }
+@media (min-width: 992px) { .cta__content { padding: 2.5rem 3rem; } }
+
+.cta__edicion {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--green-ashwel);
+  margin-bottom: .4rem;
+}
+.cta h2 { font-size: clamp(1.7rem, 1.3rem + 1.6vw, 2.2rem); margin-bottom: .4rem; }
+.cta p { color: var(--green-ashwel); }
+.cta .datos { margin: 1.1rem 0 1.5rem; }
+.cta .datos small { color: var(--green-ashwel); }
+
+.nota--cupos {
+  display: inline-block;
+  background: var(--green-ashwel);
+  color: #fff;
+  padding: 1.1rem 2rem;
+  border-radius: 40% 60% 45% 55% / 55% 45% 55% 45%;
+  transform: rotate(-6deg);
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  background: var(--green-ashwel);
+  padding: 2rem 0;
+  color: var(--white-calm);
+}
+.site-footer img { height: 52px; width: auto; }
+.footer__frase {
+  font-family: var(--font-hand);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--white-calm);
+  margin: 0;
+}
+.footer__frase i { color: var(--crayola); font-size: 1rem; }
+
+/* Círculos decorativos con los colores de marca */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  bottom: -70px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--crayola);
+  box-shadow: 70px 20px 0 -10px var(--green-life), 140px 30px 0 -20px var(--beau-blue);
+  opacity: .85;
+  pointer-events: none;
+}
+.site-footer .container { position: relative; z-index: 1; }
+
+/* ---------- Movimiento reducido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
