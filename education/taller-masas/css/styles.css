@@ -73,7 +73,7 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
 .nota {
   font-family: var(--font-hand);
   font-weight: 600;
-  font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem);
+  font-size: clamp(0.4rem, 0.4rem + 4vw, 1.9rem);
   line-height: 1.15;
   color: var(--green-ashwel);
   margin: 0;
@@ -201,7 +201,7 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
 
 .nota--hero {
   position: absolute;
-  top: 3rem;
+  top: 30%;
   right: 60%;
   text-align: center;
   transform: rotate(-20deg);
