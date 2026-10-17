@@ -19,7 +19,7 @@
   --text:         #2c3a2e;
   --text-soft:    #4d5e50;
 
-  --font-body:    "Chillax", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body:    "Chillax-Regular", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-hand:    "Caveat", "Segoe Script", cursive;
   --radius:       16px;
 }
@@ -92,7 +92,7 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
 
 .navbar .nav-link {
   font-size: .9rem;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--green-ashwel);
   padding: .5rem .25rem;
   border-bottom: 2px solid transparent;
@@ -160,8 +160,11 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
   padding: 0;
   margin: 1.5rem 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem 1.25rem;
+  /* grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.25rem; */
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  gap: 1rem 1.5rem;
 }
 .datos li {
   display: flex;
@@ -175,7 +178,7 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
 .datos li i { font-size: 1.4rem; line-height: 1; flex-shrink: 0; }
 .datos small { font-size: .72rem; font-weight: 400; color: var(--text-soft); }
 
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .datos { grid-template-columns: repeat(4, auto); justify-content: start; gap: 1rem 1.5rem; }
 }
 
@@ -191,13 +194,17 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
   height: 300px;
   object-fit: cover;
   object-position: center 30%;
+  max-width: 600px;
+  object-position: right;
+  max-height: 600px;
+
 }
 .nota--hero {
   position: absolute;
-  top: 1rem;
-  right: 1.25rem;
+  top: 2rem;
+  right: 18rem;
   text-align: center;
-  transform: rotate(-5deg);
+  transform: rotate(-20deg);
   color: var(--green-ashwel);
   background: rgba(237, 242, 238, .85);
   padding: .4rem .9rem;
@@ -205,7 +212,7 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
 }
 
 .hero__panel {
-  background: var(--bg-page);
+  /*background: var(--bg-page);*/
   padding: 2rem 0 2.5rem;
 }
 .hero__content { padding-inline: 1.5rem; }
@@ -236,7 +243,13 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
   line-height: 1.4;
   margin-bottom: .75rem;
 }
-.hero__text { font-size: .98rem; max-width: 46ch; margin-bottom: 0; }
+.hero__text { 
+  font-size: .98rem; 
+  max-width: 46ch; 
+  margin-bottom: 0; 
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Desktop: panel con borde curvo sobre la foto */
 @media (min-width: 992px) {
@@ -244,11 +257,12 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
     display: flex;
     min-height: 580px;
     overflow: hidden;
+    text-align: start;
   }
   .hero__panel {
     position: relative;
     z-index: 2;
-    flex: 0 0 56%;
+    flex: 0 0 50%;
     max-width: 56%;
     display: flex;
     align-items: center;
@@ -261,7 +275,7 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
     max-width: calc(var(--bs-breakpoint-lg, 992px) * .5);
     margin-left: auto;
     padding-left: 1rem;
-    padding-right: 5rem;
+    /* padding-right: 5rem; */
   }
   .hero__media {
     position: absolute;
@@ -271,12 +285,17 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
   }
   .hero__media img { height: 100%; }
   .nota--hero {
-    top: 2.5rem;
-    right: 2.5rem;
+    top: 8rem;
+    right: 28rem;
     background: none;
     padding: 0;
     font-size: 2rem;
     transform: rotate(-6deg);
+  }
+
+  .hero__text { 
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 @media (min-width: 1200px) {
@@ -305,7 +324,7 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
 
 .receta img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4.5;
   object-fit: cover;
   border-radius: 14px;
   display: block;
@@ -323,13 +342,20 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
 
 .experiencia__img {
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 2.5 / 4.5;
   object-fit: cover;
   border-radius: var(--radius);
   display: block;
+  max-width: 50%;
+  /* max-height: 600px;1 */
 }
 @media (min-width: 992px) {
-  .experiencia__img { border-radius: 0 var(--radius) var(--radius) 0; }
+  .experiencia__img { 
+    border-radius: 0 var(--radius) var(--radius) 0; 
+    aspect-ratio: 2.5 / 4.5;
+    max-width: 100%;
+    max-height: 600px;
+  }1
 }
 
 .nota--mancha {
