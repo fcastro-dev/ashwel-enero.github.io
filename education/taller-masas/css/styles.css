@@ -193,10 +193,16 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
   display: block;
   width: 70%;
   /* object-fit: cover; */
-  object-position: center 30%;
   /* max-width: 600px; */
   object-position: right;
   /* max-height: 600px; */
+}
+
+.hero__media iframe{
+  height: 400px; 
+  display: block;
+  width: 80%;
+  object-position: right;
 }
 
 .nota--hero {
@@ -293,6 +299,13 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
     object-position: right;
     /* max-height: 600px; */
   }
+
+  .hero__media iframe{
+    height: 80%; 
+    display: block;
+    width: 80%;
+    object-position: right;
+  }
   .nota--hero {
     top: 7rem;
     right: 70%;
@@ -342,6 +355,13 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
     /* max-width: 600px; */
     object-position: right;
     /* max-height: 600px; */
+  }
+
+  .hero__media iframe{
+    height: 100%; 
+    display: block;
+    width: 75%;
+    object-position: right;
   }
 
   .nota--hero {
