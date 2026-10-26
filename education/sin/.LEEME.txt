@@ -1,0 +1,7 @@
+Imágenes a colocar en /education/sin/img/:
+portada-reto-sin.png    Portada del documento (la que enviaste), ~800x1066
+logo-ashwel-blanco.png  Logo Ashwel en blanco con fondo transparente
+amor-aceptar.png, amor-mover.png, amor-organizar.png, amor-restaurar.png  Iconos A.M.O.R. (mín. 144x144)
+sharon.jpg              Foto de Sharon, cuadrada
+og-reto-sin.jpg         Imagen al compartir en redes, 1200x630 px
+favicon.png
