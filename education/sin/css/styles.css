@@ -57,15 +57,15 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--ashwel); outlin
 
 .amor { background: var(--white); }
 .amor-item { text-align: center; padding: 8px 6px; }
-.amor-item img { width: 72px; height: 72px; object-fit: contain; margin-bottom: 12px; }
+.amor-item img { width: 150px; height: 150px; object-fit: contain; margin-bottom: 12px; }
 .amor-item h3 { font-size: 1.35rem; }
 .amor-item h3 span { font-weight: 800; text-decoration: underline; text-decoration-color: var(--crayola); text-decoration-thickness: 4px; text-underline-offset: 4px; }
 .amor-item p { font-size: .95rem; color: var(--muted); }
 
 .panel { background: var(--white); border-radius: 20px; padding: 32px; }
 .panel-blue { background: var(--blue); }
-.sharon { display: flex; gap: 20px; align-items: flex-start; }
-.sharon img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; border: 4px solid var(--life); }
+.sharon { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+.sharon img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; border: 4px solid var(--life); }
 .sharon h2 { font-size: 1.5rem; }
 
 .steps { list-style: none; padding: 0; counter-reset: step; }
@@ -100,6 +100,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--ashwel); outlin
   .btn-payments-type { width: auto; }
   .btn-sin { padding: 0.8rem 0.5rem; }
   .hero-copy { max-width: 100%; font-size: 1.1rem; padding: 0 10%;}
+  .sharon { flex-direction: row; }
 }
 
 @media (max-width: 768px) {
