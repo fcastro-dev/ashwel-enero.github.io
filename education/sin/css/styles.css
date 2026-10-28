@@ -18,7 +18,7 @@ h1, h2, h3 { font-family: var(--font); color: var(--ashwel); line-height: 1.15; 
 h2 { font-size: clamp(1.7rem, 3.6vw, 2.4rem); font-weight: 600; margin-bottom: 1rem; }
 h3 { font-size: 1.15rem; font-weight: 600; }
 .lead { font-size: 1.15rem; font-weight: 400; }
-.narrow { max-width: 760px; }
+.narrow { max-width: 100%; }
 .section { padding: 64px 0; }
 .section.pt-0 { padding-top: 0; }
 a:focus-visible, button:focus-visible { outline: 3px solid var(--ashwel); outline-offset: 3px; }
@@ -39,7 +39,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--ashwel); outlin
 .hero-logo { height: 60px; width: auto; margin-bottom: 36px; }
 .hero-kicker { font-size: clamp(3.6rem, 11vw, 6.5rem); font-weight: 700; line-height: 1; margin: 0; color: var(--white); }
 .hero-kicker span { color: var(--blue); letter-spacing: .04em; }
-.hero h1 { color: var(--crayola); font-size: clamp(1.5rem, 3.4vw, 2.1rem); font-weight: 500; margin: .4rem 0 .3rem; }
+.hero h1 { color: var(--crayola); font-size: clamp(1.5rem, 3.4vw, 2.1rem); font-weight: 500; margin: .4rem 0 .3rem; max-width: 100%;}
 .hero-sub { font-size: clamp(1.7rem, 3.6vw, 2.4rem); color: var(--life); margin-bottom: 1.2rem; }
 .hero-copy { max-width: 100%; font-size: 1.1rem; padding: 0 10%;}
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 30px; margin-top: 1.6rem; }

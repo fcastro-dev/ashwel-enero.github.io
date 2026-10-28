@@ -58,7 +58,7 @@
           </p>
           <div class="hero-actions justify-content-center">
             <div class="price">$7 <small>acceso al reto completo</small></div>
-            <a class="btn btn-sin btn-lg btn-whatsapp" href="https://wa.me/584140000000?text=Hola%2C%20quiero%20reservar%20mi%20cupo%20en%20el%20Reto%20S.I.N.%20de%20Ashwel." target="_blank" rel="noopener noreferrer">Reservar por WhatsApp</a>
+            <a class="btn btn-sin btn-lg btn-whatsapp js-whatsapp" href="https://wa.me/584140000000?text=Hola%2C%20quiero%20reservar%20mi%20cupo%20en%20el%20Reto%20S.I.N.%20de%20Ashwel." target="_blank" rel="noopener noreferrer">Reservar por WhatsApp</a>
             <a class="btn btn-ghost btn-lg btn-payments-type" href="#pago">Ver formas de pago</a>
           </div>
         </div>
@@ -89,29 +89,29 @@
         <div class="row g-3 g-lg-4 mt-2">
           <div class="col-6 col-lg-3">
             <article class="include h-100 tone-life">
-              <span class="include-icon" aria-hidden="true">🍽️</span>
-              <h3>Menú para 3 días</h3>
+              <img class="include-icon" src="img/menu.png" alt="3 presentaciones de comidas que representan lo que incluirás en el menús del reto" width="100%" height="auto">
+              <h3 class="mt-3">Menú para 3 días</h3>
               <p>Una propuesta para organizar las comidas y meriendas de los tres días.</p>
             </article>
           </div>
           <div class="col-6 col-lg-3">
             <article class="include h-100 tone-sand">
-              <span class="include-icon" aria-hidden="true">🎥</span>
-              <h3>Videos cortos</h3>
+              <img class="include-icon" src="img/short_videos.png" alt="Videos cortos que representan la orientación práctica del reto" width="100%" height="auto">
+              <h3 class="mt-3">Videos cortos</h3>
               <p>Orientación práctica para acompañarte paso a paso.</p>
             </article>
           </div>
           <div class="col-6 col-lg-3">
             <article class="include h-100 tone-blue">
-              <span class="include-icon" aria-hidden="true">💬</span>
-              <h3>Grupo de WhatsApp</h3>
+              <img class="include-icon" src="img/wa_groups.png" alt="Grupo de WhatsApp para motivación y acompañamiento durante el reto" width="100%" height="auto">
+              <h3 class="mt-3">Grupo de WhatsApp</h3>
               <p>Motivación y acompañamiento durante los tres días del reto.</p>
             </article>
           </div>
           <div class="col-6 col-lg-3">
             <article class="include h-100 tone-crayola">
-              <span class="include-icon" aria-hidden="true">📝</span>
-              <h3>Recetario y lista de compras</h3>
+              <img class="include-icon" src="img/cook_book.png" alt="Recetario y lista de compras" width="100%" height="auto">
+              <h3 class="mt-3">Recetario y lista de compras</h3>
               <p>Material de apoyo, más el bonus de infusiones que calman.</p>
             </article>
           </div>
@@ -240,10 +240,13 @@
             <div class="pay-card h-100">
               <h3><span aria-hidden="true">📱</span> Pago Móvil <small>(si estás en Venezuela)</small></h3>
               <dl class="pay-list">
-                <div><dt>Banco</dt><dd>NOMBRE DEL BANCO</dd></div>
+                <div><dt>Banco</dt><dd><span id="pm-banco">NOMBRE DEL BANCO</span><button type="button" class="copy" data-copy="pm-banco">Copiar</button></dd></div>
                 <div><dt>Cédula</dt><dd><span id="pm-cedula">V-00.000.000</span><button type="button" class="copy" data-copy="pm-cedula">Copiar</button></dd></div>
                 <div><dt>Teléfono</dt><dd><span id="pm-tel">0414 000 0000</span><button type="button" class="copy" data-copy="pm-tel">Copiar</button></dd></div>
                 <div><dt>Monto</dt><dd>$7 en Bs. al cambio del día</dd></div>
+                <br>
+                <div><span id="pm-todo"></span></div>
+                <div><button type="button" class="copy" data-copy="pm-todo">Copiar todo</button></div>
               </dl>
             </div>
           </div>
@@ -265,7 +268,7 @@
             <div class="pay-card pay-other text-center">
               <h3><span aria-hidden="true">🌎</span> ¿Zelle o PayPal?</h3>
               <p>Si prefieres pagar por Zelle o PayPal, escríbenos por WhatsApp y coordinamos.</p>
-              <a class="btn btn-wa btn-lg" href="https://wa.me/584140000000?text=Hola%2C%20quiero%20pagar%20el%20Reto%20S.I.N.%20por%20Zelle%2FPayPal." target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
+              <a class="btn btn-wa btn-lg js-whatsapp" href="https://wa.me/584140000000?text=Hola%2C%20quiero%20pagar%20el%20Reto%20S.I.N.%20por%20Zelle%2FPayPal." target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
             </div>
           </div>
         </div>
@@ -281,7 +284,7 @@
       <div class="container narrow text-center">
         <h2>¿Te gustaría comenzar con tres días más organizados?</h2>
         <p>Súmate al Reto S.I.N. y recibe el menú, los videos cortos, el material de apoyo y el acompañamiento por WhatsApp.</p>
-        <a class="btn btn-dark-sin btn-lg" href="https://wa.me/584140000000?text=Hola%2C%20quiero%20reservar%20mi%20cupo%20en%20el%20Reto%20S.I.N.%20de%20Ashwel." target="_blank" rel="noopener noreferrer">Reservar por WhatsApp</a>
+        <a class="btn btn-dark-sin btn-lg js-whatsapp" href="https://wa.me/584140000000?text=Hola%2C%20quiero%20reservar%20mi%20cupo%20en%20el%20Reto%20S.I.N.%20de%20Ashwel." target="_blank" rel="noopener noreferrer">Reservar por WhatsApp</a>
       </div>
     </section>
   </main>
