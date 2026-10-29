@@ -15,7 +15,6 @@ document.getElementById("bn-id").textContent = BINANCE_ID;
 document.getElementById("bn-mail").textContent = BINANCE_MAIL;
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
 
   /* 1. Actualiza todos los botones de WhatsApp con el número configurado */
@@ -35,7 +34,7 @@ document.querySelectorAll('.copy').forEach(function (btn) {
   btn.addEventListener('click', function () {
     var el = document.getElementById(btn.dataset.copy);
     if (!el) return;
-    var text = el.textContent.replace(/[^\d\w\s\|]/g, '').replace(/\|/g, ' ');
+    var text = el.textContent.replace(/[^\d\w\s\|\(\)]/g, '').replace(/\|/g, ' ');
     var done = function () {
       var old = btn.textContent;
       btn.textContent = '¡Copiado!';
@@ -52,8 +51,3 @@ document.querySelectorAll('.copy').forEach(function (btn) {
     }
   });
 });
-// 0414 217 8738 V14831133 Bancamiga 0172
-// 04142178738V14831133Bancamiga0172
-// 04142178738 V14831133 Bancamiga0172
-// 0414 217 8738 V14831133 Bancamiga 0172
-// 04142178738 V14831133 Bancamiga 0172

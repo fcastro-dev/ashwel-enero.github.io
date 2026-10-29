@@ -34,6 +34,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--ashwel); outlin
 .btn-wa:hover { background: #1fbd5b; color: #0b3d1c; }
 .btn-whatsapp { width: auto; }
 .btn-payments-type { width: auto; }
+.copy-all { width: 50%; }
 
 .hero { background: var(--ashwel); color: var(--white); padding: 48px 0 64px; overflow: hidden; }
 .hero-logo { height: 60px; width: auto; margin-bottom: 36px; }
@@ -49,7 +50,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--ashwel); outlin
 
 .include { border-radius: 18px; padding: 24px 20px; }
 .include p { margin: 0; font-size: .95rem; }
-.include-icon { font-size: 2rem; display: block; margin-bottom: 6px; }
+.include-icon { font-size: 2rem; display: block; margin-bottom: 6px; border-radius: 18px;}
 .tone-life { background: var(--life); }
 .tone-sand { background: var(--sand); }
 .tone-blue { background: var(--blue); }
@@ -117,11 +118,14 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--ashwel); outlin
   .sharon { flex-direction: column; }
   .hero-actions { flex-direction: column; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 1.6rem; }
   .pay-list > div { flex-direction: column; align-items: flex-start; gap: 4px; }
-  .pay-list dd { justify-content: flex-start; text-align: left; }
+  .pay-list dd { width: 100%; justify-content: space-between; text-align: left; }
   .hero-cover { max-width: 280px; }
   .price { font-size: 2.6rem; font-weight: 700; line-height: 1; margin-right: 8px; width: 100%;}
   .btn-whatsapp { width: 100%; }
   .btn-payments-type { width: 100%; }
+  .btn-wa { width: 100%; }
+  .btn-dark-sin { width: 100%; }
+  .copy-all { width: 100%; }
   .hero-copy { max-width: 100%; font-size: 1.1rem; padding: 0 10%;}
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

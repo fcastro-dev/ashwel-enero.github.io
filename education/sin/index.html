@@ -238,15 +238,20 @@
           <!-- Pago móvil -->
           <div class="col-md-6 col-lg-5">
             <div class="pay-card h-100">
-              <h3><span aria-hidden="true">📱</span> Pago Móvil <small>(si estás en Venezuela)</small></h3>
+              <h3>
+                <span aria-hidden="true">
+                  <img src="img/pago_movil.png" alt="Pago Móvil" width="50" height="50">
+                </span> 
+                Pago Móvil <small>(si estás en Venezuela)</small>
+              </h3>
               <dl class="pay-list">
                 <div><dt>Banco</dt><dd><span id="pm-banco">NOMBRE DEL BANCO</span><button type="button" class="copy" data-copy="pm-banco">Copiar</button></dd></div>
                 <div><dt>Cédula</dt><dd><span id="pm-cedula">V-00.000.000</span><button type="button" class="copy" data-copy="pm-cedula">Copiar</button></dd></div>
                 <div><dt>Teléfono</dt><dd><span id="pm-tel">0414 000 0000</span><button type="button" class="copy" data-copy="pm-tel">Copiar</button></dd></div>
                 <div><dt>Monto</dt><dd>$7 en Bs. al cambio del día</dd></div>
                 <br>
-                <div><span id="pm-todo"></span></div>
-                <div><button type="button" class="copy" data-copy="pm-todo">Copiar todo</button></div>
+                <div class="d-none"><span id="pm-todo"></span></div>
+                <div class="d-flex justify-content-center"><button type="button" class="copy copy-all" data-copy="pm-todo">Copiar todo</button></div>
               </dl>
             </div>
           </div>
@@ -254,7 +259,12 @@
           <!-- Binance -->
           <div class="col-md-6 col-lg-5">
             <div class="pay-card h-100">
-              <h3><span aria-hidden="true">🪙</span> Binance</h3>
+              <h3>
+                <span aria-hidden="true">
+                  <img src="img/binance.png" alt="Binance" width="50" height="50">
+                </span> 
+                Binance
+              </h3>
               <dl class="pay-list">
                 <div><dt>Binance ID</dt><dd><span id="bn-id">00000000</span><button type="button" class="copy" data-copy="bn-id">Copiar</button></dd></div>
                 <div><dt>Correo</dt><dd><span id="bn-mail">correo@ejemplo.com</span><button type="button" class="copy" data-copy="bn-mail">Copiar</button></dd></div>
@@ -266,7 +276,15 @@
           <!-- Zelle / PayPal -->
           <div class="col-lg-10">
             <div class="pay-card pay-other text-center">
-              <h3><span aria-hidden="true">🌎</span> ¿Zelle o PayPal?</h3>
+              <h3>
+                <span aria-hidden="true">
+                  <img src="img/zelle.png" alt="Zelle" width="50" height="50">
+                </span> 
+                ¿Zelle o PayPal?
+                <span aria-hidden="true">
+                  <img src="img/paypal.png" alt="PayPal" width="50" height="50">
+                </span>
+              </h3>
               <p>Si prefieres pagar por Zelle o PayPal, escríbenos por WhatsApp y coordinamos.</p>
               <a class="btn btn-wa btn-lg js-whatsapp" href="https://wa.me/584140000000?text=Hola%2C%20quiero%20pagar%20el%20Reto%20S.I.N.%20por%20Zelle%2FPayPal." target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
             </div>
