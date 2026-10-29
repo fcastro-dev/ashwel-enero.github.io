@@ -5,7 +5,7 @@ const PAYMENT_TEL = "0414-217-8738";
 const CELLPHONE = "+58 0414-217-8738";
 
 const BINANCE_ID = "00000000";
-const BINANCE_MAIL = "correo@ejemplo.com";
+const BINANCE_MAIL = "shaday2081@gmail.com";
 
 document.getElementById("pm-banco").textContent = PAYMENT_BANK;
 document.getElementById("pm-cedula").textContent = PAYMENT_CEDULA;
@@ -37,7 +37,7 @@ document.querySelectorAll('.copy').forEach(function (btn) {
   btn.addEventListener('click', function () {
     var el = document.getElementById(btn.dataset.copy);
     if (!el) return;
-    var text = el.textContent.replace(/[^\d\w\s\|\(\)]/g, '').replace(/\|/g, ' ');
+    var text = (el.id === 'bn-mail') ? el.textContent : el.textContent.replace(/[^\d\w\s\|\(\)]/g, '').replace(/\|/g, ' ');
     var done = function () {
       var old = btn.textContent;
       btn.textContent = '¡Copiado!';
