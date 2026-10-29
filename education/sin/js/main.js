@@ -2,6 +2,7 @@ const WHATSAPP_NUMERO = "584142178738";
 const PAYMENT_BANK = "Bancamiga (0172)";
 const PAYMENT_CEDULA = "V-14.831.133";
 const PAYMENT_TEL = "0414-217-8738";
+const CELLPHONE = "+58 0414-217-8738";
 
 const BINANCE_ID = "00000000";
 const BINANCE_MAIL = "correo@ejemplo.com";
@@ -10,6 +11,8 @@ document.getElementById("pm-banco").textContent = PAYMENT_BANK;
 document.getElementById("pm-cedula").textContent = PAYMENT_CEDULA;
 document.getElementById("pm-tel").textContent = PAYMENT_TEL;
 document.getElementById("pm-todo").textContent = PAYMENT_TEL + '|' + PAYMENT_CEDULA + '|' + PAYMENT_BANK;
+
+document.querySelectorAll(".cellphone").forEach((el) => { el.textContent = CELLPHONE; });
 
 document.getElementById("bn-id").textContent = BINANCE_ID;
 document.getElementById("bn-mail").textContent = BINANCE_MAIL;
