@@ -1,7 +1,7 @@
 const WHATSAPP_NUMERO = "584142178738";
 const PAYMENT_BANK = "Bancamiga (0172)";
 const PAYMENT_CEDULA = "V-14.831.133";
-const PAYMENT_TEL = "0414 217 8738";
+const PAYMENT_TEL = "0414-217-8738";
 
 const BINANCE_ID = "00000000";
 const BINANCE_MAIL = "correo@ejemplo.com";
@@ -9,7 +9,7 @@ const BINANCE_MAIL = "correo@ejemplo.com";
 document.getElementById("pm-banco").textContent = PAYMENT_BANK;
 document.getElementById("pm-cedula").textContent = PAYMENT_CEDULA;
 document.getElementById("pm-tel").textContent = PAYMENT_TEL;
-document.getElementById("pm-todo").textContent = PAYMENT_TEL + ' ' + PAYMENT_CEDULA + ' ' + PAYMENT_BANK;
+document.getElementById("pm-todo").textContent = PAYMENT_TEL + '|' + PAYMENT_CEDULA + '|' + PAYMENT_BANK;
 
 document.getElementById("bn-id").textContent = BINANCE_ID;
 document.getElementById("bn-mail").textContent = BINANCE_MAIL;
@@ -35,7 +35,7 @@ document.querySelectorAll('.copy').forEach(function (btn) {
   btn.addEventListener('click', function () {
     var el = document.getElementById(btn.dataset.copy);
     if (!el) return;
-    var text = el.textContent.trim();
+    var text = el.textContent.replace(/[^\d\w\s\|]/g, '').replace(/\|/g, ' ');
     var done = function () {
       var old = btn.textContent;
       btn.textContent = '¡Copiado!';
@@ -52,3 +52,8 @@ document.querySelectorAll('.copy').forEach(function (btn) {
     }
   });
 });
+// 0414 217 8738 V14831133 Bancamiga 0172
+// 04142178738V14831133Bancamiga0172
+// 04142178738 V14831133 Bancamiga0172
+// 0414 217 8738 V14831133 Bancamiga 0172
+// 04142178738 V14831133 Bancamiga 0172
